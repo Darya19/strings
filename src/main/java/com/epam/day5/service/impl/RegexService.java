@@ -3,8 +3,6 @@ package com.epam.day5.service.impl;
 import com.epam.day5.service.RemoveLetter;
 import com.epam.day5.service.ReplaceLetter;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -34,16 +32,18 @@ public class RegexService implements ReplaceLetter, RemoveLetter {
         while (matcher.find()) {
             if (matcher.group().length() == wordLength
                     && !String.valueOf(matcher.group().charAt(0)).matches(VOWELS)) {
-               builder.append(SPACE);}
-            else {builder.append(matcher.group()).append(SPACE);}
+                builder.append(SPACE);
+            } else {
+                builder.append(matcher.group()).append(SPACE);
             }
-return builder.toString();
+        }
+        return builder.toString();
     }
 
     @Override
     public String replaceLetterByIndexInWord(String sourceText, int index, char newSymbol) {
-        Pattern pattern = Pattern.compile("\\b(\\p{LD}{"+ (index - 1)+"})(\\p{LD})([[\\p{LD}][\\p{Punct}]]*)");
-            Matcher matcher = pattern.matcher(sourceText);
+        Pattern pattern = Pattern.compile("\\b(\\p{LD}{" + (index - 1) + "})(\\p{LD})([[\\p{LD}][\\p{Punct}]]*)");
+        Matcher matcher = pattern.matcher(sourceText);
         return matcher.replaceAll("$1" + newSymbol + "$3");
 
     }
@@ -51,13 +51,13 @@ return builder.toString();
     @Override
     public String fixTypoInText(String sourceText, String typoRegex, String correctSymbol) {
         Pattern pattern = Pattern.compile(typoRegex);
-            Matcher matcher = pattern.matcher(sourceText);
+        Matcher matcher = pattern.matcher(sourceText);
         return matcher.replaceAll(correctSymbol);
     }
 
     @Override
     public String replaceWords(String sourceText, int wordLength, String subLine) {
-        Pattern pattern = Pattern.compile("\\b\\p{LD}{"+ wordLength+"}\\b");
+        Pattern pattern = Pattern.compile("\\b\\p{LD}{" + wordLength + "}\\b");
         Matcher matcher = pattern.matcher(sourceText);
         return matcher.replaceAll(subLine);
     }

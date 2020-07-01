@@ -4,5 +4,5 @@ public interface RemoveLetter {
 
     public String removeSymbols(String sourceText);
 
-    public String removeWords(String sourceText,  int wordLength);
+    public String removeWords(String sourceText, int wordLength);
 }
