@@ -1,9 +1,11 @@
 package com.epam.day5.service;
 
+import java.util.Optional;
+
 public interface ReplaceLetter {
-    public String replaceLetterByIndexInWord(String sourceText, int index, char newSymbol);
+    public Optional<String> replaceLetterByIndexInWord(String sourceText, int index, char newSymbol);
 
-    public String fixTypoInText(String sourceText, String typo, String correctSymbol);
+    public Optional<String> fixTypoInText(String sourceText, String typo, String correctSymbol);
 
-    public String replaceWords(String sourceText, int wordLength, String subLine);
+    public Optional<String> replaceWords(String sourceText, int wordLength, String subLine);
 }

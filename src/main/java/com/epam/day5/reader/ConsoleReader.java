@@ -16,9 +16,10 @@ public class ConsoleReader {
         String line = null;
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
             assert line != null;
-            while(!line.isEmpty()){
-            line = reader.readLine();
-           stringLines.add(line);}
+            while (!line.isEmpty()) {
+                line = reader.readLine();
+                stringLines.add(line);
+            }
             return stringLines;
         } catch (IOException e) {
             throw new CustomException("incorrect input data", e);

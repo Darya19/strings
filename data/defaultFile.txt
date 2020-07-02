@@ -1,6 +1,4 @@
-В-в блоке try, если друг исключение не возникло,
-вызывается метод fail(),
-сигнализирующий о провале теста. В блоке catch,
-если исключительная
-ситуация произошла, проверяется на эквивалентность текстов
-сообщения об ошибке.
+The weight of a golf ball is carefully regulated to ensure that balls
+that are too heavy are not produced and used in an official capacity.
+The maximum weight for a ball is 1.62 ounces, and balls are not permitted
+to exceed this and still be used in tournament play.
